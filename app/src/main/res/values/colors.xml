@@ -11,4 +11,7 @@
     <color name="vermelho_barra">#BB1C1F</color>
     <color name="vermelho">#EA2427</color>
     <color name="azul_fundo">#00162C</color>
+    <color name="preto_botao_auxiliar">#343F4B</color>
+    <color name="preto_checkbox">#47525E</color>
+    <color name="preto_input">#1F2D3D</color>
 </resources>

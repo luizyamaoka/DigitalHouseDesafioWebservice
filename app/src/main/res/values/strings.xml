@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DigitalHouseDesafioWebservice</string>
+    <string name="login_title">Welcome do the Marvel HQ\'s</string>
+    <string name="inputEmail">Email</string>
+    <string name="inputPassword">Password</string>
+    <string name="checkboxRemember">Remember</string>
+    <string name="buttonLogin">LOG IN</string>
+    <string name="buttonCreateAccount">Create account</string>
 </resources>
