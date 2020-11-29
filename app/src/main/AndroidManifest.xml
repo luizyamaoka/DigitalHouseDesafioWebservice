@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalHouseDesafioWebservice">
+        <activity android:name=".activity.ComicActivity"></activity>
+        <activity android:name=".activity.ComicsListActivity" />
+        <activity android:name=".activity.CadastroActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
