@@ -1,5 +1,6 @@
 package br.com.digitalhouse.desafiowebservice.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.digitalhouse.desafiowebservice.R
+import br.com.digitalhouse.desafiowebservice.activity.ComicActivity
 import br.com.digitalhouse.desafiowebservice.domain.Comic
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_comic.view.*
@@ -30,11 +32,15 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
     override fun onBindViewHolder(holder: ComicViewHolder, position: Int) {
         val comic = comics[position]
 
-//        holder.ivComicCapa.setImageResource(R.drawable.raster)
         holder.tvComicNumero.text = "#${comic.id}"
         Glide.with(holder.ivComicCapa.context).asBitmap()
             .load(comic.images.first().toString())
             .into(holder.ivComicCapa)
+        holder.ivComicCapa.setOnClickListener {
+            val intent = Intent(it.context, ComicActivity::class.java)
+            intent.putExtra("comic", comic)
+            it.context.startActivity(intent)
+        }
     }
 
     fun addComics(_comics: ArrayList<Comic>) {
