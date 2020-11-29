@@ -13,11 +13,11 @@ interface MarvelService {
 
     @GET("characters/{characterId}/comics")
     suspend fun getComicsFromCharacter (
-        @Path("characterId") characterId: Int = 1016181,
+        @Path("characterId") characterId: Int = 1009610,
         @Query("apikey") apikey: String = BuildConfig.MARVEL_API_PUBLICKEY,
         @Query("ts") ts: Long,
         @Query("hash") hash: String,
-        @Query("orderBy") orderBy: String = "issueNumber"
+        @Query("orderBy") orderBy: String = "-issueNumber"
     ) : ApiResponse<Comic>
 }
 
