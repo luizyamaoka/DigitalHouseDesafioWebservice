@@ -6,5 +6,5 @@ class ComicImage(
     @SerializedName("path") val path: String,
     @SerializedName("extension") val extension: String
 ) {
-    override fun toString() = "$path.$extension"
+    override fun toString() = "$path.$extension".replace("http://", "https://")
 }

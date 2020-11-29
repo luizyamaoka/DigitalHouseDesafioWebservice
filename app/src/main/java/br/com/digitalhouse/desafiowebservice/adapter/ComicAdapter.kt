@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.digitalhouse.desafiowebservice.R
 import br.com.digitalhouse.desafiowebservice.domain.Comic
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_comic.view.*
 
 class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
@@ -29,8 +30,11 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
     override fun onBindViewHolder(holder: ComicViewHolder, position: Int) {
         val comic = comics[position]
 
-        holder.ivComicCapa.setImageResource(R.drawable.raster)
+//        holder.ivComicCapa.setImageResource(R.drawable.raster)
         holder.tvComicNumero.text = "#${comic.id}"
+        Glide.with(holder.ivComicCapa.context).asBitmap()
+            .load(comic.images.first().toString())
+            .into(holder.ivComicCapa)
     }
 
     fun addComics(_comics: ArrayList<Comic>) {
