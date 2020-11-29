@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/azul_fundo"
+    android:paddingTop="20dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <ImageView
+        android:id="@+id/ivComicCapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/raster"
+        android:background="@color/white"
+        android:padding="3dp"
+        />
+
+    <TextView
+        android:id="@+id/tvComicNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="#96"
+        android:textColor="@color/white"
+        android:paddingTop="10dp"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
