@@ -16,7 +16,8 @@ interface MarvelService {
         @Path("characterId") characterId: Int = 1016181,
         @Query("apikey") apikey: String = BuildConfig.MARVEL_API_PUBLICKEY,
         @Query("ts") ts: Long,
-        @Query("hash") hash: String
+        @Query("hash") hash: String,
+        @Query("orderBy") orderBy: String = "issueNumber"
     ) : ApiResponse<Comic>
 }
 
