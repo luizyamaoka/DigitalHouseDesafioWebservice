@@ -9,7 +9,7 @@
     <string name="inputName">Name</string>
     <string name="buttonSave">SAVE</string>
     <string name="titleRegister">Register</string>
-    <string name="published">Published: </string>
-    <string name="price">Price: </string>
-    <string name="pages">Pages: </string>
+    <string name="published">Published:&#160;</string>
+    <string name="price">Price:&#160;</string>
+    <string name="pages">Pages:&#160;</string>
 </resources>
