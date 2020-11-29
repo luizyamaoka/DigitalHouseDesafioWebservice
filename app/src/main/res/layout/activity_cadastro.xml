@@ -7,6 +7,18 @@
     tools:context=".activity.CadastroActivity"
     android:background="@color/azul_fundo">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/vermelho"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/titleRegister" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

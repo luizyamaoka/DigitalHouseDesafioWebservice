@@ -16,6 +16,10 @@ class CadastroActivity : AppCompatActivity() {
         inputPassword.transformationMethod =
             AsteriskPasswordTransformationMethod()
 
+        toolbar.setNavigationOnClickListener {
+            this.onBackPressed()
+        }
+
         btnFinalizaCadastro.setOnClickListener {
             startActivity(Intent(this, ComicsListActivity::class.java))
         }
