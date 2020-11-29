@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnCadastro.setOnClickListener {
-            startActivity(Intent(this, ComicsListActivity::class.java))
+            startActivity(Intent(this, CadastroActivity::class.java))
         }
     }
 }

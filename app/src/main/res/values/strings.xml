@@ -6,4 +6,6 @@
     <string name="checkboxRemember">Remember</string>
     <string name="buttonLogin">LOG IN</string>
     <string name="buttonCreateAccount">Create account</string>
+    <string name="inputName">Name</string>
+    <string name="buttonSave">SAVE</string>
 </resources>
