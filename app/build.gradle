@@ -16,6 +16,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "MARVEL_API_PUBLICKEY", MARVEL_API_PUBLICKEY)
+        buildConfigField("String", "MARVEL_API_PRIVATEKEY", MARVEL_API_PRIVATEKEY)
     }
 
     buildTypes {
