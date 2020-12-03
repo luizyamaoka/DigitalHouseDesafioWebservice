@@ -15,6 +15,7 @@ import kotlin.text.Charsets.UTF_8
 class ComicListViewModel(val marvelService: MarvelService) : ViewModel() {
 
     val listComics = MutableLiveData<ArrayList<Comic>>()
+    val apiError = MutableLiveData<String>()
 
     fun getComics() {
         viewModelScope.launch {
@@ -26,6 +27,7 @@ class ComicListViewModel(val marvelService: MarvelService) : ViewModel() {
                 ).data.results
             } catch (e: Exception) {
                 Log.e("ComicListViewModel", e.toString())
+                apiError.value = e.toString()
             }
         }
     }

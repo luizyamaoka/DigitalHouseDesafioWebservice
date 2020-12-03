@@ -18,10 +18,10 @@ class ComicActivity : AppCompatActivity() {
         val comic = intent.getSerializableExtra("comic") as Comic
 
         tvTitulo.text = comic.title
-        tvDescricao.text = comic.description
-        tvPaginas.text = comic.pageCount.toString()
-        tvDataPublicacao.text = comic.dates.filter { it.type == "onsaleDate" }.first().date.toFormatted()
-        tvPreco.text = comic.prices.filter { it.type == "printPrice" }.first().price.toPrice()
+        tvDescricao.text = comic.description ?: getString(R.string.no_description)
+        tvPaginas.text = (comic.pageCount ?: getString(R.string.no_info)).toString()
+        tvDataPublicacao.text = comic.dates.firstOrNull { it.type == "onsaleDate" }?.date?.toFormatted() ?: getString(R.string.no_info)
+        tvPreco.text = comic.prices.firstOrNull { it.type == "printPrice" }?.price?.toPrice() ?: getString(R.string.no_info)
 
         Glide.with(this).asBitmap()
             .load(comic.images.first().toString())

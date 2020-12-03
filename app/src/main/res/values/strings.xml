@@ -12,4 +12,6 @@
     <string name="published">Published:&#160;</string>
     <string name="price">Price:&#160;</string>
     <string name="pages">Pages:&#160;</string>
+    <string name="no_description">No description</string>
+    <string name="no_info">No available info</string>
 </resources>

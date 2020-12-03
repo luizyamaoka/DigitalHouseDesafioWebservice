@@ -3,6 +3,7 @@ package br.com.digitalhouse.desafiowebservice.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -38,17 +39,11 @@ class ComicsListActivity : AppCompatActivity() {
             Log.i("ComicsListActivity", it.toString())
         })
 
+        viewModel.apiError.observe(this, Observer {
+            Toast.makeText(this, "Erro na API: $it", Toast.LENGTH_SHORT).show()
+        })
+
         viewModel.getComics()
 
-//        adapter.addComics(arrayListOf(
-//            Comic(1, "1"),
-//            Comic(2, "1"),
-//            Comic(3, "1"),
-//            Comic(4, "1"),
-//            Comic(5, "1"),
-//            Comic(6, "1"),
-//            Comic(7, "1"),
-//            Comic(8, "1"),
-//            Comic(9, "1")))
     }
 }
