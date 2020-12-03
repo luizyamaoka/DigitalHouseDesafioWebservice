@@ -17,13 +17,15 @@ class ComicListViewModel(val marvelService: MarvelService) : ViewModel() {
     val listComics = MutableLiveData<ArrayList<Comic>>()
     val apiError = MutableLiveData<String>()
 
-    fun getComics() {
+    fun getComics(offset: Int = 0, limit: Int = 20) {
         viewModelScope.launch {
             try {
                 val ts = System.currentTimeMillis()
                 listComics.value = marvelService.getComicsFromCharacter(
                     ts = ts,
-                    hash = getHash(ts)
+                    hash = getHash(ts),
+                    offset = offset,
+                    limit = limit
                 ).data.results
             } catch (e: Exception) {
                 Log.e("ComicListViewModel", e.toString())

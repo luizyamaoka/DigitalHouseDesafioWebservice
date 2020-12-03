@@ -17,7 +17,9 @@ interface MarvelService {
         @Query("apikey") apikey: String = BuildConfig.MARVEL_API_PUBLICKEY,
         @Query("ts") ts: Long,
         @Query("hash") hash: String,
-        @Query("orderBy") orderBy: String = "-issueNumber"
+        @Query("orderBy") orderBy: String = "-issueNumber",
+        @Query("offset") offset: Int = 0,
+        @Query("limit") limit: Int = 20
     ) : ApiResponse<Comic>
 }
 

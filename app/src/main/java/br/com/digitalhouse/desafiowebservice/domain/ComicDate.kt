@@ -5,6 +5,6 @@ import java.io.Serializable
 import java.util.*
 
 class ComicDate (
-    @SerializedName("date") val date: Date,
+    @SerializedName("date") val date: Date?,
     @SerializedName("type") val type: String
 ) : Serializable
