@@ -44,8 +44,10 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
     }
 
     fun addComics(_comics: ArrayList<Comic>) {
+        var size = this.comics.size
         comics.addAll(_comics)
-        notifyDataSetChanged()
+        var newSize = this.comics.size
+        notifyItemRangeChanged(size, newSize)
     }
 
 }

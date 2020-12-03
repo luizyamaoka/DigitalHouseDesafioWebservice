@@ -3,6 +3,7 @@ package br.com.digitalhouse.desafiowebservice.service
 import br.com.digitalhouse.desafiowebservice.BuildConfig
 import br.com.digitalhouse.desafiowebservice.domain.ApiResponse
 import br.com.digitalhouse.desafiowebservice.domain.Comic
+import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -25,7 +26,7 @@ interface MarvelService {
 
 private val retrofit = Retrofit.Builder()
     .baseUrl("https://gateway.marvel.com/v1/public/")
-    .addConverterFactory(GsonConverterFactory.create())
+    .addConverterFactory(GsonConverterFactory.create(GsonBuilder().serializeNulls().create()))
     .build()
 
 val marvelService = retrofit.create(MarvelService::class.java)
